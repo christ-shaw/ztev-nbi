@@ -1,0 +1,3 @@
+INSERT INTO `test`.`registry_info` (`id`, `description`, `operator_id`, `secret_key`) VALUES ('1', 'ztev', 'qwe', 'WZH3oh1kD8SNqwE3');
+INSERT INTO `test`.`registry_info` (`id`, `description`, `operator_id`, `secret_key`) VALUES ('3', 'HunanHaiLong', '10001', 'NZFfwBv53OGt9FFh');
+INSERT INTO `test`.`registry_info` (`id`, `description`, `operator_id`, `secret_key`) VALUES ('4', 'ZheJiangGongzong', '10002', 'vp2BDUGdfUDPIRXs');

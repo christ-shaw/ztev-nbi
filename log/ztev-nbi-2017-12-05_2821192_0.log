@@ -1,0 +1,4 @@
+2017-12-05 15:55:06,263 [INFO] [main] (StartupInfoLogger.java:48)- Starting NbiApplication on ZTE-20170307VIJ with PID 2821192 (D:\codebase\MS1.0\XZB\workspace\ztev-nbi\target\classes started by Administrator in D:\codebase\MS1.0\XZB\workspace\ztev-nbi)
+2017-12-05 15:55:06,266 [INFO] [main] (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2017-12-05 15:55:06,476 [INFO] [background-preinit] (Version.java:30)- HV000001: Hibernate Validator 5.3.5.Final
+2017-12-05 15:55:06,570 [INFO] [main] (AbstractApplicationContext.java:583)- Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@fcb4004: startup date [Tue Dec 05 15:55:06 CST 2017]; root of context hierarchy

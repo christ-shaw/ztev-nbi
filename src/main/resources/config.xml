@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jms="http://www.springframework.org/schema/jms" xmlns:amq="http://activemq.apache.org/schema/core"
+    xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+	http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms.xsd
+	http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+    <dubbo:application name="ztev_nbi"/>
+    <dubbo:registry address="zookeeper://10.9.185.54:4478" file=".dubbo/ztev-nbi.cache"/>
+    <dubbo:protocol name="dubbo" port="20910"/>
+    <dubbo:annotation package="com.ztev.nbi"/>
+    <!--<dubbo:annotation package="com.ztev.performance.dubbo,com.ztev.alarm.service.remote"/>-->
+
+    <!--<dubbo:service interface="com.ztev.alarm.service.IAlarmReportService" ref="gateWayAlarmReportService"/>-->
+	<!--<bean id="gateWayAlarmReportService" class="com.ztev.alarm.service.remote.AlarmReportService"/>-->
+
+	<!--<bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">-->
+		<!--<property name="brokerURL" value="${spring.activemq.broker-url}" />-->
+		<!--<property name="userName" value="${spring.activemq.user}" />-->
+		<!--<property name="password" value="${spring.activemq.password}" />-->
+		<!--<property name="trustedPackages">-->
+		  <!--<list>-->
+		    <!--<value>com.ztev.alarm</value>-->
+		  <!--</list>-->
+		<!--</property>-->
+	<!--</bean>-->
+
+	<!--bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean-->
+	<!---->
+	<!--<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">-->
+		<!--<property name="dataSource" ref="dataSource" />-->
+	<!--</bean>-->
+
+	<!--&lt;!&ndash; 使用annotation定义事务 &ndash;&gt;-->
+	<!--<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>-->
+	<!--&lt;!&ndash;context:component-scan base-package="com.ztev"/&ndash;&gt;-->
+	<!---->
+	<!--<bean id="pileproxyJmsQueueTemplate" class="org.springframework.jms.core.JmsTemplate">-->
+		<!--<constructor-arg ref="connectionFactory" />-->
+		<!--&lt;!&ndash; 非pub/sub模型（发布/订阅），即队列模式 &ndash;&gt;-->
+		<!--<property name="pubSubDomain" value="false" />-->
+	<!--</bean>-->
+	<!---->
+	<!--&lt;!&ndash; 定义JmsTemplate的Topic类型 &ndash;&gt;-->
+	<!--<bean id="pileproxyJmsTopicTemplate" class="org.springframework.jms.core.JmsTemplate">-->
+		<!--<constructor-arg ref="connectionFactory" />-->
+		<!--&lt;!&ndash; pub/sub模型（发布/订阅） &ndash;&gt;-->
+		<!--<property name="pubSubDomain" value="true" />-->
+	<!--</bean>-->
+    <!--<import resource="classpath*:/ztev-dubbo-consumer-springcontext.xml"/>-->
+</beans>
